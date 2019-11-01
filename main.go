@@ -36,11 +36,14 @@ func getCustomer(w http.ResponseWriter, r *http.Request) {
 func main() {
 	r := mux.NewRouter()
 
-	infos = append(infos, Info{Text: "Felipe"})
+	infos = append(infos, Info{Text: "Utils info"})
+
+	customers = append(customers, Custumer{Name: "Felipe", Age: 25, Sex: "M", Info: &Info{Text: "Programmer"}})
+	customers = append(customers, Custumer{Name: "Liz", Age: 23, Sex: "F", Info: &Info{Text: "Journalist"}})
 
 	r.HandleFunc("/hello", fncHello).Methods("GET")
 
-	r.HandleFunc("/custumer", getCustomer).Methods("GET")
+	r.HandleFunc("/custumers", getCustomer).Methods("GET")
 
 	log.Fatal(http.ListenAndServe(":8000", r))
 }
