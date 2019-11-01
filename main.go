@@ -39,7 +39,7 @@ func main() {
 	infos = append(infos, Info{Text: "Utils info"})
 
 	customers = append(customers, Custumer{Name: "Felipe", Age: 25, Sex: "M", Info: &Info{Text: "Programmer"}})
-	customers = append(customers, Custumer{Name: "Liz", Age: 23, Sex: "F", Info: &Info{Text: "Journalist"}})
+	customers = append(customers, Custumer{Name: "Liz", Age: 22, Sex: "F", Info: &Info{Text: "Journalist"}})
 
 	r.HandleFunc("/hello", fncHello).Methods("GET")
 
